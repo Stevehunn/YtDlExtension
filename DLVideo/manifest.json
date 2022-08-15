@@ -1,0 +1,27 @@
+{
+    "manifest_version": 2,
+    "name": "YtDL",
+    "version": "1.0.0",
+
+    "content_script":[
+        {
+            "matches": ["<all_urls>" ],
+            "js": ["/content_script.js"]
+        }
+    ],
+
+    "browser_action": {
+        "browser_style": true,
+        "default_icon": {
+            "48": "/icons/iconExtension.png"
+        },
+        "default_title": "YtDL",
+        "default_popup": "/popup.html"
+    },
+
+    "permissions": [
+        "<all_urls>",
+        "tabs"
+    ]
+
+}
