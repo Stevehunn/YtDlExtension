@@ -1,0 +1,27 @@
+{
+    "manifest_version": 2,
+    "name": "Mon extension",
+    "version": "1.0",
+
+    "content_script":[
+        {
+            "matches": ["<all_urls>" ],
+            "js": ["/ajoutBordure.js"]
+        }
+    ],
+
+    "browser_action": {
+        "browser_style": true,
+        "default_icon": {
+            "48": "/icons/icon.png"
+        },
+        "default_title": "Mon extension",
+        "default_popup": "/popup.html"
+    },
+
+    "permissions": [
+        "storage",
+        "tabs"
+    ]
+
+}

@@ -1,6 +1,7 @@
 let input = document.querySelector('input');
 
 if (input == "cmp3"){
+    blur;
     URL= getCurrentUrl;
     dlInMp3;
 }
