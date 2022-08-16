@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name ="viewport" content="width=device-width">
+        <style>
+            body {
+                padding: 1em;
+            }
+            input {
+                margin-left: 1em;
+            }
+        </style>
+    </head>
+    <body>
+        <fieldset>
+            <legend>Youtube Downloader</legend>
+
+            <div class="form-group">
+                <span>Url of your video:</span>
+                <input type="text" class="url" id="videoUrl" name="videoUrl" required minlength="4" size="35">
+            </div>
+
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" id="scales" class="radio" value="1" name="mp3" checked> MP3 
+                </label>
+                <label>
+                    <input type="checkbox" id="horns" class="radio" value="1" name="mp4"> MP4
+                </label>
+            </div>
+
+            <button type="submit">Confirm</button>
+        </fieldset>
+        <script src="/VideoDL/popup.js"></script>
+    </body>
+
+
+</html>
+
+<style>
+
+    body {
+        min-width: 400px; /* your desired width */
+        max-width: 100%;
+        position: relative;
+        vertical-align:middle;
+    }
+
+    .url {
+        float: inherit;
+        min-width: fit-content;
+    }
+
+    .checkbox {
+        margin-top: 10px;
+        float: inherit;
+        min-width: 10px;
+        max-width: 100%;
+       
+    }
+
+    label {
+        max-width: 300px;
+    }
+
+    button {
+        float: right;
+        border: 0;
+        text-align: center;
+        display: inline-block;
+        padding: 14px;
+        width: 150px;
+        margin: 7px;
+        color: #ffffff;
+        background-color: #36a2eb;
+        border-radius: 8px;
+        font-family: "proxima-nova-soft", sans-serif;
+        font-weight: 600;
+        text-decoration: none;
+        transition: box-shadow 200ms ease-out;
+    }
+
+    button:hover {
+        color: #000000;
+        background-color: #2af5f5;
+    }
+
+
+    .form-field {
+        display: block;
+        width: 100%;
+        padding: 8px 16px;
+        line-height: 25px;
+        font-size: 14px;
+        font-weight: 500;
+        font-family: inherit;
+        border-radius: 6px;
+        -webkit-appearance: none;
+        color: var(--input-color);
+        border: 1px solid var(--input-border);
+        background: var(--input-background);
+        transition: border .3s ease;
+    }
+    .form-field::placeholder {
+        color: var(--input-placeholder);
+    }
+    .form-field:focus {
+        outline: none;
+        border-color: var(--input-border-focus);
+    }
+
+    
+</style>
