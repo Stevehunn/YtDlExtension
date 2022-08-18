@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' '; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' 'unsafe-eval';">
+         <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval' 'background.js';" >
         <meta name ="viewport" content="width=device-width">
         <style>
             body {
@@ -31,12 +31,9 @@
                 MP4
             </div>
 
-            <button id="button">Confirm</button>
+            <button id="btnConf">Confirm</button>
         </fieldset>
-        <input type="text" placeholder="Entrez une valeur ici" id="in">
-        <button type="button" onclick="getValue();">Récupérer la valeur</button>
-
-        <script src="/VideoDL/background.js"></script>
+        <script type="text/javascript" src="background.js"></script>
     </body>
 
 
