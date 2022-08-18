@@ -3,12 +3,10 @@
     "name": "VideoDL",
     "version": "1.0.0",
 
-    "content_script":[
-        {
-            "matches": ["<all_urls>" ],
-            "js": ["/content_script.js"]
+    "background":{
+            "scripts":["background.js"]
         }
-    ],
+    ,
 
     "browser_action": {
         "browser_style": true,
@@ -16,7 +14,7 @@
             "48": "/icons/icon.png"
         },
         "default_title": "VideoDL",
-        "default_popup": "/popup.html"
+        "default_popup": "/view.html"
     },
 
     "permissions": [

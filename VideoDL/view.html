@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="utf-8">
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' '; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' 'unsafe-eval';">
         <meta name ="viewport" content="width=device-width">
         <style>
             body {
@@ -25,15 +25,18 @@
            <div class="format">
                 MP3
                 <label class="switch">
-                    <input type="checkbox">
+                    <input type="checkbox" id="choix">
                     <span class="slider round"></span>
                 </label>
                 MP4
             </div>
 
-            <button type="submit">Confirm</button>
+            <button id="button">Confirm</button>
         </fieldset>
-        <script src="/VideoDL/popup.js"></script>
+        <input type="text" placeholder="Entrez une valeur ici" id="in">
+        <button type="button" onclick="getValue();">Récupérer la valeur</button>
+
+        <script src="/VideoDL/background.js"></script>
     </body>
 
 
