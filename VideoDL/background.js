@@ -1,18 +1,30 @@
 console.log("hello l'extension charge ce script")
 
+/* truc à faire -> require ne fonctionne pas
+const express =require("express");
+const cors =require("cors")
+const ytdl =require("ytdl-core");
+const app =express();
+*/
+
 var input = document.querySelector('videoUrl');
 var format = document.getElementById('choix');
 var btn = document.getElementById('btnConf');
-var video = 'https://www.youtube.com/watch?v=Q3AQ5D2QFwc';
-console.log(input);
-console.log(format);
-console.log(btn);
-
+var videoTest = 'https://www.youtube.com/watch?v=Q3AQ5D2QFwc';
 var mp4 = false;
+
 
 function download(url,mp4){
     console.log('enter download function')
 
+    if(mp4){
+        ytdl(url, { filter: format => format.container === 'mp4' })
+        console.log('download mp4 format...')
+    } else {
+        ytdl(url, { filter: format => format.container === 'mp3' })
+        console.log('download mp3 format...')
+    }
+    
 }
 
 function getValueForm(url){
@@ -65,35 +77,6 @@ if (btn) {
 }
 
 
-/* Test autre code
-inputUrl.addEventListener('change', e => setValue(e.target.value))
-
-async function setValue(value){
-    await browser.storage.local.set({value})
-}
-
-async function init(){
-    let { value } = browser.local.storage.get('value');
-    if(!value){
-        value =0;
-    }
-    inputFormat.value = value;
-    setValue(value);
-}
-
-init().catch(e => console.error(e));
-*/
-
-//Première version
-/*
-var data = document.getElementById("btnConf").addEventListener('click', getValueForm());
-
-async function getValueForm() {
-    // Sélectionner l'élément input et récupérer sa valeur
-    var input = document.getElementById("videoUrl").value;
-    var format = document.getElementById("choix").ariaChecked;
-
-    // Afficher la valeur
-    console.log("valeur récupérer", input," format souhaité ", format);
-}
-*/
+console.log(input);
+console.log(format);
+console.log(btn);
