@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+    <head>
+         <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval' 'background.js';" >
+        <meta name ="viewport" content="width=device-width">
+        <style>
+            body {
+                padding: 1em;
+            }
+            input {
+                margin-left: 1em;
+            }
+        </style>
+    </head>
+    <body>
+        <fieldset>
+            <legend>Youtube Downloader</legend>
+           <h1>Loading ...</h1>
+        </fieldset>
+        <script type="text/javascript" src="background.js"></script>
+    </body>
+
+
+</html>
+
+<style>
+
+    body {
+        min-width: 400px; /* your desired width */
+        max-width: 100%;
+        position: relative;
+        vertical-align:middle;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    .url {
+        float: inherit;
+        min-width: fit-content;
+    }
+
+    .checkbox {
+        margin-top: 10px;
+        float: inherit;
+        min-width: 10px;
+        max-width: 100%;
+       
+    }
+
+    .format {
+        text-decoration:solid;
+        text-align: left;
+        font-weight: bold;
+        padding-top: 20px;
+        text-size-adjust: 12;
+    }
+
+   
+
+    label {
+        max-width: 300px;
+    }
+
+    button {
+        float: right;
+        border: 0;
+        text-align: center;
+        display: inline-block;
+        padding: 14px;
+        width: 150px;
+        margin: 7px;
+        color: #ffffff;
+        background-color: #36a2eb;
+        border-radius: 8px;
+        font-family: "proxima-nova-soft", sans-serif;
+        font-weight: 600;
+        text-decoration: none;
+        transition: box-shadow 200ms ease-out;
+    }
+
+    button:hover {
+        color: #000000;
+        background-color: #2af5f5;
+    }
+
+
+    .form-field {
+        display: block;
+        width: 100%;
+        padding: 8px 16px;
+        line-height: 25px;
+        font-size: 14px;
+        font-weight: 500;
+        font-family: inherit;
+        border-radius: 6px;
+        -webkit-appearance: none;
+        color: var(--input-color);
+        border: 1px solid var(--input-border);
+        background: var(--input-background);
+        transition: border .3s ease;
+    }
+    .form-field::placeholder {
+        color: var(--input-placeholder);
+    }
+    .form-field:focus {
+        outline: none;
+        border-color: var(--input-border-focus);
+    }
+
+    /* The switch - the box around the slider */
+    .switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    }
+
+    /* Hide default HTML checkbox */
+    .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    }
+
+    /* The slider */
+    .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(120, 252, 127);
+    -webkit-transition: .4s;
+    transition: .4s;
+    }
+
+    .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+    }
+
+    input:checked + .slider {
+    background-color: #2196F3;
+    }
+
+    input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+    }
+
+    input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+    }
+
+    /* Rounded sliders */
+    .slider.round {
+    border-radius: 34px;
+    }
+
+    .slider.round:before {
+    border-radius: 50%;
+    }
+
+</style>

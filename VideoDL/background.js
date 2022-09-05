@@ -34,6 +34,8 @@ function getValueForm(url){
     } else{
         alert("Format select: MP4. Start of the download")
     }
+    // redirect to loading.html
+    location.href='loading.html'
     download(url,mp4)
 }
 
@@ -74,6 +76,7 @@ if (btn) {
     }
     getValueForm(valueInput);
     });
+    
 }
 
 
