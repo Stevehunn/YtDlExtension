@@ -10,6 +10,7 @@ const app =express();
 var input = document.querySelector('videoUrl');
 var format = document.getElementById('choix');
 var btn = document.getElementById('btnConf');
+var btnConv = document.getElementById('btnConvert');
 var videoTest = 'https://www.youtube.com/watch?v=Q3AQ5D2QFwc';
 var mp4 = false;
 
@@ -20,9 +21,13 @@ function download(url,mp4){
     if(mp4){
         ytdl(url, { filter: format => format.container === 'mp4' })
         console.log('download mp4 format...')
+        // redirect to finish.html
+        location.href='finish.html'
     } else {
         ytdl(url, { filter: format => format.container === 'mp3' })
         console.log('download mp3 format...')
+        // redirect to finish.html
+        location.href='finish.html'
     }
     
 }
@@ -75,6 +80,15 @@ if (btn) {
     console.log(valueInput);
     }
     getValueForm(valueInput);
+    });
+    
+}
+
+// ✅ Check if btnConvert exists before addEventListener()
+if (btnConv) {
+    btnConv.addEventListener('click', () => {console.log('input clicked');
+    // redirect to view.html
+     location.href='view.html'
     });
     
 }
