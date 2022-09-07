@@ -1,12 +1,14 @@
 {
   "dependencies": {
+    "browserify": "^17.0.0",
     "cors": "^2.8.5",
     "ejs": "^3.1.8",
     "express": "^4.18.1",
     "ffmpeg": "^0.0.4",
     "ffmpeg-static": "^5.0.2",
+    "init": "^0.1.2",
     "ytdl": "^1.4.1",
-    "ytdl-core": "^4.11.0"
+    "ytdl-core": "^4.11.2"
   },
   "name": "videodl",
   "version": "1.0.0",

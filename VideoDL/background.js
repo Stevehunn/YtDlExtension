@@ -1,10 +1,22 @@
 console.log("hello l'extension charge ce script")
 
-/* truc à faire -> require ne fonctionne pas
-const express =require("express");
-const cors =require("cors")
-const ytdl =require("ytdl-core");
+/*
+const express =require('express');
+const cors =require('cors')
+const ytdl =require('ytdl-core');
 const app =express();
+*/
+
+/*
+import express from 'express';
+import cors from 'cors';
+import ytdl from 'ytdl-core';
+const app =express();
+*/
+/*
+import ytdl from 'ytdl-core'; with --esModuleInterop
+import * as ytdl from 'ytdl-core'; with --allowSyntheticDefaultImports
+import ytdl = require('ytdl-core'); with neither of the above
 */
 
 var input = document.querySelector('videoUrl');
@@ -21,16 +33,46 @@ function download(url,mp4){
     if(mp4){
         ytdl(url, { filter: format => format.container === 'mp4' })
         console.log('download mp4 format...')
+
         // redirect to finish.html
         location.href='finish.html'
     } else {
-        ytdl(url, { filter: format => format.container === 'mp3' })
+        downloadMp3(url)
         console.log('download mp3 format...')
+      
         // redirect to finish.html
         location.href='finish.html'
     }
     
 }
+
+function downloadMp3({ mp3File, params: { url } }, res, next) {
+    console.log("downloadMp3")
+    if ( mp3File ) {
+        console.log("mp3 file next")
+     next()
+    }
+    
+    ytdl.getInfo(url, { quality: 'highestaudio' }, function(err, info) {
+     var stream = ytdl.downloadFromInfo(info, {
+      quality: 'highestaudio'
+     })
+   
+     ffmpeg(stream)
+     .audioBitrate(info.formats[0].audioBitrate)
+     .withAudioCodec("libmp3lame")
+     .toFormat("mp3")
+     .saveToFile(`mp3/${videoId}.mp3`)
+     .on("error", function(err) {
+      console.log('error', err)
+      res.json(err)
+     })
+     .on("end", function() {
+      next() 
+     })
+    })
+    console.log("ytdl fin") 
+   }
 
 function getValueForm(url){
     console.log('recover data')
