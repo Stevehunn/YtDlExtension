@@ -1,23 +1,10 @@
 console.log("hello l'extension charge ce script")
 
-/*
+
 const express =require('express');
 const cors =require('cors')
 const ytdl =require('ytdl-core');
 const app =express();
-*/
-
-/*
-import express from 'express';
-import cors from 'cors';
-import ytdl from 'ytdl-core';
-const app =express();
-*/
-/*
-import ytdl from 'ytdl-core'; with --esModuleInterop
-import * as ytdl from 'ytdl-core'; with --allowSyntheticDefaultImports
-import ytdl = require('ytdl-core'); with neither of the above
-*/
 
 var input = document.querySelector('videoUrl');
 var format = document.getElementById('choix');
